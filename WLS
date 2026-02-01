@@ -5,3 +5,4 @@ Get-Command C:\Windows\System32\wsl.exe
 
 # Now actually shut down WSL
 C:\Windows\System32\wsl.exe --shutdown
+Ok
