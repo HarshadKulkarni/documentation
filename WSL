@@ -1,3 +1,13 @@
+run on Windows PowerShell (Admin):
+
+# Verify you’re calling the Microsoft WSL in System32
+Get-Command C:\Windows\System32\wsl.exe
+
+# Now actually shut down WSL
+C:\Windows\System32\wsl.exe --shutdown
+
+
+++++++++++++++++++++++++++++++++++++
 When you're working inside WSL, the **best practice is very clear**:  
 **Always create your Pipenv environments inside the Linux filesystem — not inside `/mnt/c` or any Windows-mounted directory.**
 
@@ -62,7 +72,4 @@ Only for:
 - Sharing files between Windows and WSL
 
 But **never** for Python environments or package installs.
-
----
-
-If you want, I can help you set up a clean WSL Python workflow — including Pipenv, VS Code integration, and best practices for project structure.
++++++++++++++++++++++++++++
