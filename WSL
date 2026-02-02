@@ -1,0 +1,68 @@
+When you're working inside WSL, the **best practice is very clear**:  
+**Always create your Pipenv environments inside the Linux filesystem — not inside `/mnt/c` or any Windows-mounted directory.**
+
+Here’s why this matters.
+
+---
+
+## ✅ **Where to create your Pipenv?**
+**Use:**  
+`/home/<your-username>/your-project/`
+
+**Avoid:**  
+`/mnt/c/...` (or any Windows-mounted folder)
+
+---
+
+## 🚀 **Why Linux filesystem is the right choice**
+### **1. Massive performance difference**
+WSL is optimized for Linux-native paths.  
+Running Python, Pipenv, virtualenv, or Git inside `/mnt/c` is **significantly slower** because every file operation crosses the Windows–Linux boundary.
+
+### **2. Fewer permission issues**
+Windows file permissions don’t map cleanly to Linux.  
+Inside `/mnt/c`, you often hit:
+- Permission denied errors  
+- Symlink failures  
+- Pipenv lockfile inconsistencies  
+
+### **3. Python packages behave correctly**
+Many Python packages compile native Linux extensions.  
+These break or behave unpredictably when installed on Windows-mounted paths.
+
+### **4. Cleaner environment management**
+Pipenv stores virtualenvs under:
+`~/.local/share/virtualenvs/`  
+This works perfectly when your project is inside `/home`.
+
+---
+
+## 🧭 **Recommended workflow**
+### **Step 1: Create a project folder inside WSL**
+```bash
+mkdir -p ~/projects/myapp
+cd ~/projects/myapp
+```
+
+### **Step 2: Initialize Pipenv**
+```bash
+pipenv install
+```
+
+### **Step 3: Activate**
+```bash
+pipenv shell
+```
+
+---
+
+## 📝 **When to use `/mnt/c`**
+Only for:
+- Editing code with Windows editors (VS Code handles this automatically)
+- Sharing files between Windows and WSL
+
+But **never** for Python environments or package installs.
+
+---
+
+If you want, I can help you set up a clean WSL Python workflow — including Pipenv, VS Code integration, and best practices for project structure.
