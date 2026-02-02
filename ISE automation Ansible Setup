@@ -1,3 +1,5 @@
+sudo apt install pipenv
+OR use brew 
 ++++++++++++++++++++++
 Force Homebrew to ignore SSL verification:
 export HOMEBREW_CURLRC=1
