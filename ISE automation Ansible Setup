@@ -24,6 +24,7 @@ pipenv install botocore
 pipenv install amazon.aws
 pipenv install amazon.cli
 pipenv install requests
+pipenv install python-terraform
 
 
 # 1) Install/upgrade the Cisco ISE collection
