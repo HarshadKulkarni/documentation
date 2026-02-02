@@ -10,7 +10,9 @@ Then run:
 /bin/bash -c "$(curl -fsSLk https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 +++++++++++++++++++++++++++++++++++
 
-brew install pipenv
+create new dire like  (/home/harshad/network_automaiton)
+brew install pipenv (install pipenv)
+pipenv shell (activate pipenv)
 pipenv install --python 3.14
 pipenv install ansible
 pipenv install ciscoisesdk
