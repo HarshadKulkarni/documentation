@@ -1,0 +1,72 @@
+You **can’t install Terraform itself with pip**, because Terraform is **not a Python package**—it’s a standalone HashiCorp binary.  
+But you *can* install it **via Pipenv** using a Python wrapper package that bundles the Terraform binary.
+
+The correct way is to use either:
+
+*   **terraform-bin** (GitHub wrapper) [\[github.com\]](https://github.com/karstenjakobsen/terraform-bin)
+*   **terraform-binary / terraform-executor** (PyPI wrapper) [\[pypi.org\]](https://pypi.org/project/terraform-executor/)
+
+Both packages download and manage the Terraform binary for you inside your Pipenv environment.
+
+***
+
+# ✅ Install Terraform using Pipenv (Recommended Method)
+
+### **1. Create / enter a Pipenv environment**
+
+```bash
+pipenv shell
+```
+
+### **2. Install the Terraform wrapper**
+
+You have two good options:
+
+### **Option A — terraform-bin**
+
+```bash
+pipenv install terraform-bin
+```
+
+After installation you can run:
+
+```bash
+terraform init
+```
+
+ [\[github.com\]](https://github.com/karstenjakobsen/terraform-bin)
+
+***
+
+### **Option B — terraform-executor / terraform-binary (PyPI)**
+
+```bash
+pipenv install terraform-executor
+```
+
+Then use Terraform normally:
+
+```bash
+terraform init
+```
+
+ [\[pypi.org\]](https://pypi.org/project/terraform-executor/)
+
+***
+
+# 🔍 Why this works
+
+These packages **bundle the actual Terraform binary** and expose it through your Pipenv environment, so you avoid manually downloading and placing binaries in PATH.
+
+***
+
+# 👍 Which should you choose?
+
+*   **terraform-bin** → Actively maintained wrapper on GitHub
+*   **terraform-executor / terraform-binary** → Published on PyPI
+
+Both work similarly.
+
+***
+
+If you'd like, I can generate a full Pipenv `Pipfile` example for a Terraform project or show how to run Terraform inside Python scripts.
