@@ -41,7 +41,7 @@ terraform init
 ### **Option B — terraform-executor / terraform-binary (PyPI)**
 
 ```bash
-pipenv install terraform-executor
+pipenv install terraform-executor   -------------- insttaled using this command in past
 ```
 
 Then use Terraform normally:
